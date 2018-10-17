@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="jumbotron">
+        <h1 class="display-4">{{myArticle.title}}</h1>
+        <p>
+          <small>
+            <a [routerLink]="['/']">< More Top News</a>
+          </small>
+        </p>
+      </div> <!-- /.jumbotron -->
+    </div> <!-- /.col -->
+    <div class="col-12 col-sm-6" *ngIf="myArticle.urlToImage">
+      <img class="mb-3 img-fluid" src="{{myArticle?.urlToImage}}" alt="header image">
+    </div> <!-- /.col -->
+    <div class="col-12 col-sm-6" *ngIf="myArticle.description">
+      <h4>{{myArticle.title}} - Description Below:</h4>
+      <p>
+        {{myArticle.description}}
+      </p>
+    </div> <!-- /.col -->
+  </div> <!-- /.row -->
+</div> <!-- /.container -->

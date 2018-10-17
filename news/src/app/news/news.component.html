@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="jumbotron">
+        <h1 class="display-4">Get News</h1>
+        <p class="lead">
+          This is a simple News API for testing API's with Angular.
+        </p>
+        <hr class="my-4">
+        <p>It uses the news api from <a target="_blank" href="https://newsapi.org/">newsapi.org</a> to get a list of articles.</p>
+        <a class="btn btn-primary btn-lg" target="_blank" href="https://newsapi.org/" role="button">Learn more</a>
+      </div> <!-- /.jumbotron -->
+      <ol class="pl-3" *ngIf="service.newsDataContainer?.articles">
+        <li class="p-1 mb-1" *ngFor="let n of service.newsDataContainer.articles; let i = index">
+          <a [routerLink]="['/details']" [queryParams]="{id: n.source.id}">{{n.title}}</a>
+       </li>
+      </ol>
+    </div> <!-- /.col -->
+  </div> <!-- /.row -->
+</div> <!-- /.container -->
